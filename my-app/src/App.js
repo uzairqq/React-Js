@@ -8,6 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <Users title="App.js" />
+        <Users justANumber="Static Website" />
       </div>
 
     );
