@@ -7,8 +7,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Users title="App.js" />
+        <Users notANumber="Dynamic Website" />
         <Users justANumber="Static Website" />
+        <Users title="App.js" />
+
       </div>
 
     );
