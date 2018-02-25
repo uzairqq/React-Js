@@ -1,16 +1,12 @@
-import React, {
-  Component
-} from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Users from './user/Users';
 
-function SayHello() {
-  return <h1>hello world</h1>
-}
+
 class App extends Component {
   render() {
     return (
-      <SayHello />
+      <Users />
     );
   }
 }
