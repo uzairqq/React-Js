@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-
+import User from './User';
 
 class Users extends Component {
     render() {
         return (
             <div>
-                hello world
-             </div>
+                <User />
+                <User />
+                <User />
+                <User />
+                <User />
+            </div>
+
         );
     }
 }
