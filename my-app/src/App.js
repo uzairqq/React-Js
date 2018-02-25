@@ -6,7 +6,10 @@ import Users from './user/Users';
 class App extends Component {
   render() {
     return (
-      <Users />
+      <div className="App">
+        <Users title="App.js" />
+      </div>
+
     );
   }
 }
