@@ -1,9 +1,14 @@
 import React from 'react';
 
-const User = () => {
+const User = (props) => {
     return (
-        <div>user no 2 is here</div>
-    );
+        <div>{props.children}</ div>
+    )
+
 }
 
+
 export default User;
+
+
+//
