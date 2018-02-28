@@ -18,7 +18,8 @@ class App extends Component {
       <div className="App">
         <br /><br />
         {this.state.name}
-        <button onClick={() => this.ChangeName('ashar')}> Change State</button>
+        <button onClick={() => this.ChangeName('ashar')}> Change State using anonymous function</button>
+        <button onClick={this.ChangeName.bind(this, 'pasha')}> Change State using bind function</button>
         <br />
       </div>
     );
