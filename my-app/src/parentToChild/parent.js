@@ -4,7 +4,7 @@ import Child from './child'
 const parent = (props) => {
     return (
         <div>
-            <Child {...props} />
+            <Child {...props} xyz='abc' />
         </div>
 
     )
