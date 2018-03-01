@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Child from './parentToChild/child';
-
+import Parent from './parentToChild/parent';
 
 class App extends Component {
   state = {
@@ -15,7 +15,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Child doWhatEver={this.changeTheWorld.bind(this, 'uzair')} title={this.state.title} />
+        <Parent doWhatEver={this.changeTheWorld.bind(this, 'uzair')} title={this.state.title} />
       </div>
     );
   }
