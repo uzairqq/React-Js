@@ -5,9 +5,9 @@ import User from './components/user'
 class App extends Component {
   state = {
     users: [
-      { name: "uzair", age: 20 },
-      { name: "laraib", age: 30 },
-      { name: "pasha", age: 40 }
+      { id: 'abcd', name: "uzair", age: 20 },
+      { id: 'efgh', name: "laraib", age: 30 },
+      { id: 'ijklm', name: "pasha", age: 40 }
     ]
   }
   DeleteUser = (index, e) => {
@@ -21,7 +21,7 @@ class App extends Component {
         <ul>
           {
             this.state.users.map((user, index) => {
-              return (<User age={user.age} deleteEvent={this.DeleteUser.bind(this, index)}>{user.name}</User>)
+              return (<User age={user.age} key={user.id} deleteEvent={this.DeleteUser.bind(this, index)}>{user.name}</User>)
             })
           }
         </ul>
