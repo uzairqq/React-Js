@@ -1,22 +1,36 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import './App.css';
 
 const Temp = (props) => {
+  console.log('Rendered Temp Component')
   return (
-    <Fragment>
-      <div >Hi {props.SomeString}</div>
+    <div>
+      <div>Hi {props.val}</div>
       <div>Hello</div>
-    </Fragment>
+    </div>
   )
 }
 
-class App extends Component {
 
+
+class App extends Component {
+  state = {
+    val: Math.random
+  }
+
+  componentDidMount() {
+    setInterval(() => {
+      this.setState(() => {
+        return { val: 1 }
+      })
+    }, 2000)
+  }
 
   render() {
+    console.log('Rendered App Component')
     return (
       <div className="App">
-        <Temp SomeString="uzair" />
+        <Temp val={this.state.val} />
       </div>
     );
   }
