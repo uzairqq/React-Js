@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './App.css';
 
 const Temp = () => {
   return (
-    [
-      <div>Hi</div>,
+    <Fragment>
+      <div>Hi</div>
       <div>Hello</div>
-    ]
+    </Fragment>
   )
 }
 
