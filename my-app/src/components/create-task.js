@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 export default class CreateTask extends Component {
     constructor(props) {
-        super(props);
+        super();
 
         this.state = {
             error: null
@@ -13,7 +13,11 @@ export default class CreateTask extends Component {
     validateInput(task) {
         if (!task) {
             return 'Please enter a task';
-        } else {
+        }
+        //else if (_.find(this.props.tasks, tsk => tsk.task === task)) {
+        //     return 'Task already exists'
+        // } 
+        else {
             return null;
         }
     }
