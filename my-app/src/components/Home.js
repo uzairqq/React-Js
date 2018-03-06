@@ -4,10 +4,14 @@ class Home extends React.Component {
     constructor(props) {
         super();
         this.state = {
-            age: props.initiallAge
+            age: props.initiallAge,
+            homeLink: "Changed Link of Header"
         }
     };
 
+    onChangeLink() {
+        this.props.changeLink(this.state.homeLink());
+    }
 
     MakeMeOld = () => {
         this.setState({
@@ -31,6 +35,8 @@ class Home extends React.Component {
                 <button className="btn btn-primary" onClick={() => this.MakeMeOld()}>Make Me Older</button>
                 <hr />
                 <button onClick={this.props.greet} className="btn btn-primary">Greet me</button>
+                <hr />
+                <button onClick={this.onChangeLink.bind(this)} class="btn btn-primary">Change Header Link</button>
             </div>
         )
     }
