@@ -5,15 +5,21 @@ class Home extends React.Component {
         super();
         this.state = {
             age: props.initiallAge
-
         }
-    }
+    };
+
 
     MakeMeOld = () => {
         this.setState({
-            age: this.state.age += 1
+            age: this.state.age + 3
         })
     }
+    setTimeout = (() => {
+        this.setState({
+            age: 2222
+        })
+    }, 1000);
+
     render() {
         return (
             <div>
@@ -23,6 +29,8 @@ class Home extends React.Component {
                 <br />
                 <hr />
                 <button className="btn btn-primary" onClick={() => this.MakeMeOld()}>Make Me Older</button>
+                <hr />
+                <button onClick={this.props.greet} className="btn btn-primary">Greet me</button>
             </div>
         )
     }
