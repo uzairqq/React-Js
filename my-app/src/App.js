@@ -13,7 +13,7 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col-xs-10 col-xs-offset-1">
-            <Home name="uzair" age="20" />
+            <Home name="uzair" initiallAge={20} />
           </div>
         </div>
       </div>
