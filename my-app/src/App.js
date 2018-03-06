@@ -4,10 +4,6 @@ import Home from './components/Home';
 
 class App extends Component {
   render() {
-    var user = {
-      name: "uzair",
-      hobbies: ["sports", "cricket"]
-    }
     return (
       <div className="container">
         <div className="row">
@@ -17,7 +13,7 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col-xs-10 col-xs-offset-1">
-            <Home name={user.name} age={20} hobby={user.hobbies} />
+            <Home name="uzair" age="20" />
           </div>
         </div>
       </div>
