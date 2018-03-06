@@ -8,6 +8,8 @@ class Home extends React.Component {
 
     MakeMeOld() {
         this.age += 3;
+        console.log(this.age);
+
     }
     render() {
         return (
@@ -17,7 +19,7 @@ class Home extends React.Component {
                 Age:{this.props.age}
                 <br />
                 <hr />
-                <button onClick={this.MakeMeOld.bind(this)}>Make Me Older</button>
+                <button onClick={() => this.MakeMeOld()}>Make Me Older</button>
             </div>
         )
     }
