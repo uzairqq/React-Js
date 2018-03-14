@@ -36,7 +36,10 @@ class App extends Component {
     }
 }
 App.propTypes = {
-    list: propTypes.arrayOf(propTypes.object)
+    list: propTypes.arrayOf(propTypes.shape({
+        name: propTypes.string.isRequired,
+        friend: propTypes.bool.isRequired
+    }))
 }
 ReactDOM.render(<App
     list={[
