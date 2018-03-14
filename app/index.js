@@ -1,31 +1,50 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types'
 
 class App extends Component {
     render() {
+
+        var friend = this.props.list.filter(function (user) {
+            return user.friend === true
+        });
+        var nonFriend = this.props.list.filter((user) => {
+            return user.friend === false
+        });
         return (
             <div>
-                <img src={this.props.img}
-                    alt='Avatar'
-                    style={{ width: 100, height: 100 }} />
-                <h1>Name:{this.props.name}</h1>
-                <h3>UserName:{this.props.username}</h3>
+                <h1>Friends</h1>
+                <ul>
+                    {/*Create an <li> for every name in the list array who is also your friend*/}
+                    {friend.map(function (user) {
+                        return <li key={user.name}>{user.name}</li>
+                    })}
+                </ul>
+
+                <hr />
+
+                <h1> Non Friends </h1>
+                <ul>
+                    {/*Create an <li> for every name in the list array who is NOT your friend*/}
+                    {nonFriend.map(function (user) {
+                        return <li key={user.name}>{user.name}</li>
+                    })}
+                </ul>
             </div>
         )
     }
 }
-App.PropTypes = {
-    img: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    username: PropTypes.string.isRequired
+App.propTypes = {
+    list: propTypes.array.isRequired
 }
-
-
-
 ReactDOM.render(<App
-    name="Uzair Iqbal"
-    username="tyler"
-    img={'https://avatars0.githubusercontent.com/u/2933430?v=3&s=460'}
+    list={[
+        { name: 'Tyler', friend: true },
+        { name: 'Ryan', friend: true },
+        { name: 'Michael', friend: false },
+        { name: 'Mikenzi', friend: false },
+        { name: 'Jessica', friend: true },
+        { name: 'Dan', friend: false }]}
+
 />, document.getElementById('app'));
