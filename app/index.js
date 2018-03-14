@@ -36,7 +36,7 @@ class App extends Component {
     }
 }
 App.propTypes = {
-    list: propTypes.array.isRequired
+    list: propTypes.arrayOf(propTypes.object)
 }
 ReactDOM.render(<App
     list={[
