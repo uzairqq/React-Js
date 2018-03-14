@@ -2,45 +2,36 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-class App extends Component {
+class ProfilePic extends React.Component {
     render() {
-
-        var friend = this.props.list.filter(function (user) {
-            return user.friend === true
-        });
-        var nonFriend = this.props.list.filter((user) => {
-            return user.friend === false
-        });
         return (
             <div>
-                <h1>Friends</h1>
-                <ul>
-                    {/*Create an <li> for every name in the list array who is also your friend*/}
-                    {friend.map(function (user) {
-                        return <li key={user.name}>{user.name}</li>
-                    })}
-                </ul>
-
-                <hr />
-
-                <h1> Non Friends </h1>
-                <ul>
-                    {/*Create an <li> for every name in the list array who is NOT your friend*/}
-                    {nonFriend.map(function (user) {
-                        return <li key={user.name}>{user.name}</li>
-                    })}
-                </ul>
+                <img src={'https://photo.fb.com/' + this.props.username} />
             </div>
         )
     }
 }
-ReactDOM.render(<App
-    list={[
-        { name: 'Tyler', friend: true },
-        { name: 'Ryan', friend: true },
-        { name: 'Michael', friend: false },
-        { name: 'Mikenzi', friend: false },
-        { name: 'Jessica', friend: true },
-        { name: 'Dan', friend: false }]}
+class ProfileLink extends React.Component {
+    render() {
+        return (
+            <div>
+                <a href={'https://www.fb.com/' + this.props.username}>
+                    {this.props.username}
+                </a>
+            </div>
+        )
+    }
+}
 
-/>, document.getElementById('app'));
+
+class App extends Component {
+    render() {
+        return (
+            <div>
+                <ProfilePic username={this.props.username} />
+                <ProfileLink username={this.props.username} />
+            </div>
+        )
+    }
+}
+ReactDOM.render(<App username="uzairqq" />, document.getElementById('app'));
