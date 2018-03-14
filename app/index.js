@@ -17,7 +17,7 @@ class App extends Component {
                 <ul>
                     {/*Create an <li> for every name in the list array who is also your friend*/}
                     {friend.map(function (user) {
-                        return <li>{user.name}</li>
+                        return <li key={user.name}>{user.name}</li>
                     })}
                 </ul>
 
@@ -27,7 +27,7 @@ class App extends Component {
                 <ul>
                     {/*Create an <li> for every name in the list array who is NOT your friend*/}
                     {nonFriend.map(function (user) {
-                        return <li>{user.name}</li>
+                        return <li key={user.name}>{user.name}</li>
                     })}
                 </ul>
             </div>
