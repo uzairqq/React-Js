@@ -13,7 +13,7 @@ body {
 }
 
 .languages li {
-    margin: 10px;
+    margin: 20px;
     font-weight: bold;
     cursor: pointer;
 }
