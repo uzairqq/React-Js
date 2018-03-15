@@ -1,9 +1,13 @@
 import React from 'react';
+import Popular from '../components/popular'
 
 class App extends React.Component {
     render() {
+        var languages = ['All', 'Javascript', 'Ruby', 'Python', 'CSS', 'Java', 'Asp.Net'];
         return (
-            <div><h1>hello</h1></div>
+            <div className="container">
+                <Popular />
+            </div>
         )
     }
 }
