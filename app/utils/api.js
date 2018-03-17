@@ -6,9 +6,9 @@ module.exports = {
             + language +
             '&sort=stars&order=desc&type=Repositories');
 
-        return axios.get()
+        return axios.get(encodedURI)
             .then((response) => {
-                return respon.data.items;
+                return response.data.items;
             });
     }
 }
