@@ -34,25 +34,32 @@ class Popular extends React.Component {
         this.updateLanguage = this.updateLanguage.bind(this);
     }
     componentWillMount() {
-        api.fetchPopularRepos(this.state.selectedLanguage)
-            .then((repo) => {
-                console.log(repo);
-            })
+        this.updateLanguage(this.state.selectedLanguage)
     }
 
     updateLanguage(lang) {
         this.setState(() => {
             return {
-                selectedLanguage: lang
+                selectedLanguage: lang,
+                repo: null
             }
         })
+        api.fetchPopularRepos(lang)
+            .then((repo) => {
+                this.setState(() => {
+                    return { repo: repo }
+                })
+            })
     }
     render() {
         return (
-            <SelectLanguage
-                selectedLanguage={this.state.selectedLanguage}
-                onSelect={this.updateLanguage}
-            />
+            <div>
+                <SelectLanguage
+                    selectedLanguage={this.state.selectedLanguage}
+                    onSelect={this.updateLanguage}
+                />
+                {JSON.stringify(this.state.repo)}
+            </div>
         )
     }
 }
