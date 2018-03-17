@@ -5,7 +5,7 @@ function SelectLanguage(props) {
     var languages = ['All', 'Javascript', 'Ruby', 'Python', 'CSS', 'Java', 'Asp.Net'];
     return (
         <ul className="languages">
-            {/* <p>Select Language:{this.state.selectedLanguage}</p> */}
+            <p>Select Language:{this.state.selectedLanguage}</p>
             {languages.map((lang) => {
                 return (
                     <li
