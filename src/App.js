@@ -11,25 +11,24 @@ class App extends Component {
 
     ]
   };
+  SwitchNameMethod = () => {
+    this.setState({
+      users: [
+        { name: "uzairs", age: 222, hobbies: "Crickets" },
+        { name: "laraibs", age: 233, hobbies: "Footballs" },
+        { name: "sarmads", age: 225, hobbies: "Snookers" }
 
+      ]
+    })
+  }
   render() {
-    setTimeout(() => {
-      this.setState({
-        users: [
-          { name: "uzair222", age: 222, hobbies: "Crickets" },
-          { name: "laraib33", age: 223, hobbies: "Footballs" },
-          { name: "sarmad44", age: 225, hobbies: "Snookers" }
-        ]
-      })
-    }, 1000);
+
     return (
       <div className="App">
+        <button onClick={this.SwitchNameMethod}>Switch Here</button>
         <Person name={this.state.users[0].name} age={this.state.users[0].age}>Hobbies:{this.state.users[0].hobbies}</Person>
         <Person name={this.state.users[1].name} age={this.state.users[1].age}>Hobbies:{this.state.users[1].hobbies}</Person>
         <Person name={this.state.users[2].name} age={this.state.users[2].age}>Hobbies:{this.state.users[2].hobbies}</Person>
-
-
-
       </div>
     );
   }
