@@ -11,6 +11,17 @@ class App extends Component {
 
     ]
   };
+
+  changeValuesMethod = (event) => {
+    this.setState({
+      users: [
+        { name: "uzairs", age: 222, hobbies: "Crickets" },
+        { name: event.target.value, age: 233, hobbies: "Footballs" },
+        { name: "sarmads", age: 225, hobbies: "Snookers" }
+      ]
+    })
+  }
+
   newName = "uzairsssssss!!"
   SwitchNameMethod = (newName) => {
     this.setState({
@@ -27,7 +38,7 @@ class App extends Component {
       <div className="App">
         <button onClick={this.SwitchNameMethod.bind(this, this.newName)}>Switch Here</button>
         <Person methodClick={this.SwitchNameMethod} name={this.state.users[0].name} age={this.state.users[0].age}>Hobbies:{this.state.users[0].hobbies}</Person>
-        <Person name={this.state.users[1].name} age={this.state.users[1].age}>Hobbies:{this.state.users[1].hobbies}</Person>
+        <Person changedName={this.changeValuesMethod} name={this.state.users[1].name} age={this.state.users[1].age}>Hobbies:{this.state.users[1].hobbies}</Person>
         <Person name={this.state.users[2].name} age={this.state.users[2].age}>Hobbies:{this.state.users[2].hobbies}</Person>
       </div>
     );
