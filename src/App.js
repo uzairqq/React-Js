@@ -23,15 +23,10 @@ class App extends Component {
     })
   }
 
-  newName = "uzairsssssss!!"
-  SwitchNameMethod = (newName) => {
-    this.setState({
-      users: [
-        { name: newName, age: 222, hobbies: "Crickets" },
-        { name: "laraibs", age: 233, hobbies: "Footballs" },
-        { name: "sarmads", age: 225, hobbies: "Snookers" }
-      ]
-    })
+  deletePersonMethod = (personIndex) => {
+    const persons = this.state.users;
+    persons.splice(personIndex, 1);
+    this.setState({ users: persons })
   }
   togglePersonsMethod = () => {
     const dowork = this.state.showPerson;
@@ -49,8 +44,8 @@ class App extends Component {
     if (this.state.showPerson) {
       persons = (
         <div>
-          {this.state.users.map(pers => {
-            return <Person name={pers.name} age={pers.age} />
+          {this.state.users.map((pers, index) => {
+            return <Person deletePerson={() => this.deletePersonMethod(index)} name={pers.name} age={pers.age} />
           })
           }
         </div>
