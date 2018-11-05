@@ -33,10 +33,18 @@ class App extends Component {
     })
   }
   render() {
+    const buttonStyle = {
+      backgroundColor: 'blue',
+      font: 'inherit',
+      border: '1px solid blue',
+      padding: '8px'
+    };
 
     return (
       <div className="App">
-        <button onClick={this.SwitchNameMethod.bind(this, this.newName)}>Switch Here</button>
+        <button
+          style={buttonStyle}
+          onClick={this.SwitchNameMethod.bind(this, this.newName)}>Switch Here</button>
         <Person methodClick={this.SwitchNameMethod} name={this.state.users[0].name} age={this.state.users[0].age}>Hobbies:{this.state.users[0].hobbies}</Person>
         <Person changedName={this.changeValuesMethod} name={this.state.users[1].name} age={this.state.users[1].age}>Hobbies:{this.state.users[1].hobbies}</Person>
         <Person name={this.state.users[2].name} age={this.state.users[2].age}>Hobbies:{this.state.users[2].hobbies}</Person>
