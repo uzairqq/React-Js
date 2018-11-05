@@ -18,7 +18,8 @@ class App extends Component {
         { name: "uzairs", age: 222, hobbies: "Crickets" },
         { name: event.target.value, age: 233, hobbies: "Footballs" },
         { name: "sarmads", age: 225, hobbies: "Snookers" }
-      ]
+      ],
+      showPerson: false
     })
   }
 
@@ -32,6 +33,10 @@ class App extends Component {
       ]
     })
   }
+  togglePersonsMethod = () => {
+    const dowork = this.state.showPerson;
+    this.setState({ showPerson: !dowork })
+  }
   render() {
     const buttonStyle = {
       backgroundColor: 'blue',
@@ -44,10 +49,14 @@ class App extends Component {
       <div className="App">
         <button
           style={buttonStyle}
-          onClick={this.SwitchNameMethod.bind(this, this.newName)}>Switch Here</button>
-        <Person methodClick={this.SwitchNameMethod} name={this.state.users[0].name} age={this.state.users[0].age}>Hobbies:{this.state.users[0].hobbies}</Person>
-        <Person changedName={this.changeValuesMethod} name={this.state.users[1].name} age={this.state.users[1].age}>Hobbies:{this.state.users[1].hobbies}</Person>
-        <Person name={this.state.users[2].name} age={this.state.users[2].age}>Hobbies:{this.state.users[2].hobbies}</Person>
+          onClick={this.togglePersonsMethod}>Switch Here</button>
+        {
+          this.state.showPerson ?
+            <div>
+              <Person methodClick={this.SwitchNameMethod} name={this.state.users[0].name} age={this.state.users[0].age}>Hobbies:{this.state.users[0].hobbies}</Person>
+              <Person changedName={this.changeValuesMethod} name={this.state.users[1].name} age={this.state.users[1].age}>Hobbies:{this.state.users[1].hobbies}</Person>
+              <Person name={this.state.users[2].name} age={this.state.users[2].age}>Hobbies:{this.state.users[2].hobbies}</Person>
+            </div> : null}
       </div>
     );
   }
