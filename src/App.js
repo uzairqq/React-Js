@@ -45,14 +45,16 @@ class App extends Component {
       padding: '8px'
     };
 
-    let person = null;
+    let persons = null;
     if (this.state.showPerson) {
-      person =
+      persons = (
         <div>
-          <Person methodClick={this.SwitchNameMethod} name={this.state.users[0].name} age={this.state.users[0].age}>Hobbies:{this.state.users[0].hobbies}</Person>
-          <Person changedName={this.changeValuesMethod} name={this.state.users[1].name} age={this.state.users[1].age}>Hobbies:{this.state.users[1].hobbies}</Person>
-          <Person name={this.state.users[2].name} age={this.state.users[2].age}>Hobbies:{this.state.users[2].hobbies}</Person>
+          {this.state.users.map(pers => {
+            return <Person name={pers.name} age={pers.age} />
+          })
+          }
         </div>
+      );
     }
 
     return (
@@ -60,7 +62,7 @@ class App extends Component {
         <button
           style={buttonStyle}
           onClick={this.togglePersonsMethod}>Switch Here</button>
-        {person}
+        {persons}
 
       </div>
     );
