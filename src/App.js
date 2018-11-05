@@ -45,18 +45,23 @@ class App extends Component {
       padding: '8px'
     };
 
+    let person = null;
+    if (this.state.showPerson) {
+      person =
+        <div>
+          <Person methodClick={this.SwitchNameMethod} name={this.state.users[0].name} age={this.state.users[0].age}>Hobbies:{this.state.users[0].hobbies}</Person>
+          <Person changedName={this.changeValuesMethod} name={this.state.users[1].name} age={this.state.users[1].age}>Hobbies:{this.state.users[1].hobbies}</Person>
+          <Person name={this.state.users[2].name} age={this.state.users[2].age}>Hobbies:{this.state.users[2].hobbies}</Person>
+        </div>
+    }
+
     return (
       <div className="App">
         <button
           style={buttonStyle}
           onClick={this.togglePersonsMethod}>Switch Here</button>
-        {
-          this.state.showPerson ?
-            <div>
-              <Person methodClick={this.SwitchNameMethod} name={this.state.users[0].name} age={this.state.users[0].age}>Hobbies:{this.state.users[0].hobbies}</Person>
-              <Person changedName={this.changeValuesMethod} name={this.state.users[1].name} age={this.state.users[1].age}>Hobbies:{this.state.users[1].hobbies}</Person>
-              <Person name={this.state.users[2].name} age={this.state.users[2].age}>Hobbies:{this.state.users[2].hobbies}</Person>
-            </div> : null}
+        {person}
+
       </div>
     );
   }
