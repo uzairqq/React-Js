@@ -13,6 +13,7 @@ class App extends Component {
   };
 
   changeValuesMethod = (event) => {
+
     this.setState({
       users: [
         { name: "uzairs", age: 222, hobbies: "Crickets" },
@@ -35,7 +36,7 @@ class App extends Component {
   }
   render() {
     const buttonStyle = {
-      backgroundColor: 'blue',
+      backgroundColor: 'red',
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px'
@@ -53,9 +54,11 @@ class App extends Component {
               key={pers.id}
             />
           })
+
           }
         </div>
       );
+      buttonStyle.backgroundColor = 'blue';
     }
 
     return (
