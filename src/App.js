@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import appCss from './App.css';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -63,13 +63,13 @@ class App extends Component {
     }
     let styleClases = [];
     if (this.state.users.length <= 2) {
-      styleClases.push('red');
+      styleClases.push(appCss.red);
     }
     if (this.state.users.length <= 1) {
-      styleClases.push('bold');
+      styleClases.push(appCss.Bold);
     }
     return (
-      <div className="App">
+      <div className={appCss.App}>
         <h1>Hi I am React app</h1>
         <p className={styleClases.join(' ')}>This is really working</p>
         <button
