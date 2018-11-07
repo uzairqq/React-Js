@@ -35,14 +35,10 @@ class App extends Component {
     this.setState({ showPerson: !dowork })
   }
   render() {
-    const buttonStyle = {
-      backgroundColor: 'red',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px'
-    };
+
 
     let persons = null;
+    let btnClass = '';
     if (this.state.showPerson) {
       persons = (
         <div>
@@ -58,8 +54,7 @@ class App extends Component {
           }
         </div>
       );
-      buttonStyle.backgroundColor = 'blue';
-
+      btnClass = appCss.red;
     }
     let styleClases = [];
     if (this.state.users.length <= 2) {
@@ -73,7 +68,7 @@ class App extends Component {
         <h1>Hi I am React app</h1>
         <p className={styleClases.join(' ')}>This is really working</p>
         <button
-          style={buttonStyle}
+          className={btnClass.}
           onClick={this.togglePersonsMethod}>Switch Here</button>
         {persons}
 
