@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import appCss from './App.css';
 import Person from './Person/Person';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 class App extends Component {
   state = {
@@ -43,12 +44,13 @@ class App extends Component {
       persons = (
         <div>
           {this.state.users.map((pers, index) => {
-            return <Person
-              deletePerson={() => this.deletePersonMethod(index)}
-              name={pers.name}
-              age={pers.age}
+            return <ErrorBoundary
               key={pers.id}
-            />
+            > <Person
+                deletePerson={() => this.deletePersonMethod(index)}
+                name={pers.name}
+                age={pers.age}
+              /></ErrorBoundary>
           })
 
           }
@@ -68,7 +70,7 @@ class App extends Component {
         <h1>Hi I am React app</h1>
         <p className={styleClases.join(' ')}>This is really working</p>
         <button
-          className={btnClass.}
+          className={btnClass}
           onClick={this.togglePersonsMethod}>Switch Here</button>
         {persons}
 
