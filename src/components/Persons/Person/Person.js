@@ -3,10 +3,7 @@ import cssPerson from './Person.css';
 
 
 const person = (props) => {
-    const rn = Math.random();
-    if (rn > 0.7) {
-        throw new Error('Something Went Wring');
-    }
+
     return (
 
         <div className={cssPerson.Person}>
