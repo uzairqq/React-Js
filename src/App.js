@@ -5,7 +5,7 @@ import Todos from "./components/Todos";
 const App = () => {
   return (
     <>
-      <Header />
+      <Header title="Todo App" />
       <Todos />
       <Footer />
     </>
