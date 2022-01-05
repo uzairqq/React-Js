@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Header = (props) => {
   return (
@@ -45,13 +46,18 @@ const Header = (props) => {
                 </button>
               </form>
             ) : (
-              "no search bar  "
+              ""
             )}
           </div>
         </div>
       </nav>
     </div>
   );
+};
+
+Header.propTypes = {
+  title: PropTypes.string,
+  searchBar: PropTypes.bool,
 };
 
 export default Header;
