@@ -54,6 +54,10 @@ const Header = (props) => {
     </div>
   );
 };
+Header.defaultProps = {
+  title: "Uzair",
+  searchBar: false,
+};
 
 Header.propTypes = {
   title: PropTypes.string,
