@@ -28,8 +28,12 @@ const Todos = () => {
 
   return (
     <div className="container">
-      <h2>Todo's List</h2>
-      <TodoItem todo={todos[0]} />
+      <h2 className="text-center">Todo's List</h2>
+
+      {todos.map((todo)=>{
+        return <TodoItem todo={todo}/>
+      })}
+      
     </div>
   );
 };
