@@ -6,7 +6,7 @@ const App = () => {
   var random_boolean = Math.random() < 0.5;
   return (
     <>
-      <Header />
+      <Header title={"Todo App"} searchBar={random_boolean} />
       <Todos />
       <Footer />
     </>

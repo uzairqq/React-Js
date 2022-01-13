@@ -55,13 +55,12 @@ const Header = (props) => {
   );
 };
 Header.defaultProps = {
-  title: "Uzair",
-  searchBar: false,
+  title: "Your Title Here",
 };
 
 Header.propTypes = {
   title: PropTypes.string,
-  searchBar: PropTypes.bool,
+  searchBar: PropTypes.bool.isRequired,
 };
 
 export default Header;
