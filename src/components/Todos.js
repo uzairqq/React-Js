@@ -40,10 +40,11 @@ const Todos = () => {
     <div className="container">
       <h2 className="text-center">Todo's List</h2>
 
-      {todos.map((todo)=>{
+{todos.length===0?"No Todos to Display":
+      todos.map((todo)=>{
         return <TodoItem key={todo.id} todo={todo} onDelete={onDelete}/>
-      })}
-      
+      })
+      }
     </div>
   );
 };
