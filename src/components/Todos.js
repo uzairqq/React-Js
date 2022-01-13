@@ -1,15 +1,9 @@
-import React from "react";
+import React,{useState} from "react";
 import TodoItem from "./TodoItem";
 
 const Todos = () => {
 
-  const onDelete=(todo)=>{
-      console.log("Delete Clicked",todo)
-  }
-
-  
-
-  let todos=[
+  const [todos, setTodos] = useState([
     {
       id:1,
       title:"You need to go to the market 1",
@@ -30,7 +24,15 @@ const Todos = () => {
       title:"You need to go to the market 4",
       desc:"you have this job done 4"
     }
-  ]
+  ])
+
+  const onDelete=(todo)=>{
+      console.log("Delete Clicked",todo)
+      setTodos(todos.filter((argTodo)=>{
+        return argTodo!==todo
+      }))
+  }
+  
 
   return (
 
