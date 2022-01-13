@@ -3,6 +3,12 @@ import TodoItem from "./TodoItem";
 
 const Todos = () => {
 
+  const onDelete=(todo)=>{
+      console.log("Delete Clicked",todo)
+  }
+
+  
+
   let todos=[
     {
       id:1,
@@ -27,11 +33,13 @@ const Todos = () => {
   ]
 
   return (
+
+    
     <div className="container">
       <h2 className="text-center">Todo's List</h2>
 
       {todos.map((todo)=>{
-        return <TodoItem todo={todo}/>
+        return <TodoItem key={todo.id} todo={todo} onDelete={onDelete}/>
       })}
       
     </div>
